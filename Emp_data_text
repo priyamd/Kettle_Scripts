@@ -1,9 +1,0 @@
-#################Input Output CSV###############################
-
-
-
-The CSV File Input step reads data from delimited text files into a PDI transformation.
-
-
-The Text file output step exports data to a text file. 
-This step is commonly used to generate comma separated values (CSV) files that can be read by spreadsheet applications
