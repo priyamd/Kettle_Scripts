@@ -1,7 +1,8 @@
 ##################Input Output Transformation###########################
+Assignment: Need to load the data present in the input csv to the output csv.
+The  record count in the input and output should be match.
 
-
-1) First reads data from delimited text files into a PDI transformation.
-2) Then load it into text output file with CSV extension.
-3) Then run the script. It gives me same number of rows present into input CSV as below,
+1) First reads data from input CSV files into PDI 'CSV File Input'transformation.
+2) Load all the data from input CSV to the output CSV with by using 'Text Output' transformation.
+3) Run the script and verified the count from input and output CSV.
 
