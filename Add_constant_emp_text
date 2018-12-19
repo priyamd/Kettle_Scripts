@@ -1,0 +1,8 @@
+###########Text File For Add Constant Transformation############################
+
+The Add constant values step is a simple and high performance way to add constant values to the stream.
+ough 
+To add a constant, specify the name, type, and value in the form of a string. Then, specify the formats to convert the value into the chosen data type.
+
+ I add Country Constant Against Every Employee in Table through this transformation.
+
