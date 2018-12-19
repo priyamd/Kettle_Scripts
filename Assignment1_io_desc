@@ -1,4 +1,5 @@
 ##################Input Output Transformation###########################
+
 Assignment: Need to load the data present in the input csv to the output csv.
 The  record count in the input and output should be match.
 
@@ -6,3 +7,5 @@ The  record count in the input and output should be match.
 2) Load all the data from input CSV to the output CSV with by using 'Text Output' transformation.
 3) Run the script and verified the count from input and output CSV.
 
+please refer the below link for Input Output Transformation:
+https://docs.google.com/document/d/10ahb3r8E52gPGAK2laFmpd5R9QxGCF7g1B-SMZs0EVk/edit
