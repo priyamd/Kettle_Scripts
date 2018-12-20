@@ -1,0 +1,49 @@
+############# Assignment 2 #################
+
+Assignment : Need to load the input Patients data csv to the output csv.
+The  record count in the input and output should be match.
+
+Fields of Patients data are :
+BoxNumber,Name,MRN,SxPathNumber,Gender,DOB,Ethnicity,Collection Date,Consent,Consent Date,Sample Type,Doctor,Zip,Comments
+
+Make following Transformations in it: 
+
+1)Ignore BoxNUmber,SxPathNumber,SxPathNumber,Consent,Consent Date,Sample Type,Zip,Comments fields.
+2)Split Name field into 2 fields First Name and Last Name.
+3)Rename MRN field as Medical Record Number.
+4)Mapped Gender	as M-> Male, F-> Female.
+5)Rename DOB field as Date Of Birth.
+6)Ethnicity field Keep as it is.
+7)For Collection Date field Change the date format to ‘MM-DD-YYYY’.
+8)Rename Doctor field as Doctor Name.
+9)Genarate unique patient id per patient.
+10)Create output CSV file.
+
+Solution : 
+
+1) First reads data from input CSV files into PDI 'CSV File Input' transformation.
+
+2) To split the name use 'Split Fields Transformation' and then for 'field to split' option give the field that you want to split ,that is 'Name'.After that give two new field names in  field section, that is 'First Name' and 'Last Name'.
+  
+3) To Renaming the fields use Select Value Transformation then rename DOB,MRN and Doctor using Select and Alter Section.
+
+4) To Mapping Gender Field use Replace in String Transformation.In that Give the string what you want to replace and new string.That is for M -> Male and For F-> Female.
+
+5) To change Date Format of collection date and DOB change in text file output csv as 'MM-DD-YYYY'.
+
+6) to Add Unique Patient Id use Add sequence Transformation.To change format of unique id change format in output text file field as 'P0000'.
+
+7) To ignore fields BoxNUmber,SxPathNumber,SxPathNumber,Consent,Consent Date,Sample Type,Zip and Comments remove from text file output fields. 
+
+
+8) Load all the data from input CSV to the output CSV with by using 'Text Output' transformation.
+
+9) Run the script and verified the count from input and output CSV also verified the changes in CSV.
+ 
+please refer the below link for Input Output CSV:
+
+https://docs.google.com/document/d/1WZ6Z6PWvBhWQIC04qYPieQCpYzKEK2E7aMfiR2IdMCI/edit
+
+
+
+
