@@ -1,0 +1,107 @@
+############# Assignment 3 #################
+
+Question 1 : Need to load the input Patient Info csv to the output csv.
+
+Fields are : PAGER.id,PCCR.id,caps.id,Name.First,Name.Middle,Name.Last,consent.date1,consented.by1,
+Birth.Date,Deceased,Death.Date,Gender,Race,ethnicity.
+
+The  output will be as per the Requirement.Requirements are as below,
+
+1)Rename PAGER.id to PPID,Name.First to First Name,Name.Middle to Middle Name,Name.Last to Last Name,consent.date1 to Consent Date,consented.by1 to Consented By, Birth.Date to Date of Birth and Death.Date to Date of Death.
+2)Mapped Gender	as M-> Male, F-> Female.
+3) Change value of fields Consented By as BE as Bijan Egle,SS as Stain Smith,CC as Cora Cora,RR as Rahul Raj,EF as Edvert Fox,VL as Van Lan.
+4)Ignore PCCR.id,caps.id,Deceased,Race,ethnicity fields from Output Text File.
+5)Create output CSV file.
+
+Solution : 
+
+1) First reads data from input CSV files into PDI using 'CSV File Input' transformation.
+
+2) To Renaming the fields use Select Value Transformation then rename fields using Select and Alter Section.
+
+3) To Mapping Gender Field use Replace in String Transformation.In that Give the string what you want to replace and new string.That is for M -> Male and For F-> Female.
+
+4) To change value use Value Mapper Transformation.In that Gives field name and also source and target name of value.
+
+5) To ignore fields remove it from text file output fields. 
+
+
+8) Load all the data from input CSV to the output CSV with by using 'Text Output' transformation.
+
+9) Run the script and verified the count from input and output CSV also verified the changes in CSV.
+ 
+please refer the below link : 
+
+https://docs.google.com/document/d/1ePemUZCgOdGjU2so5PvCxqB0_St9aqPDm-bzNltnyjY/edit
+
+--------------------------------------------------------------------------------------------
+
+Question 2 : Need to load the input Updated Cyst Log csv to the output csv.
+
+Fields are : PAGER Study,Kit Number,Source,Cyst Fluid Time Collected,Cyst Fluid Time Frozen,Cyst Fluid date collected,Freeze Date,Who Transported,Who Processed,Cyst Fluid Aliquots,Aliq Vol (uL),Samples Sent,Volume left,Cyst Color,Cyst Consistency.
+
+The output will be as per the Requirement.Requirements are as below,
+
+1)Rename fields PAGER Study as PPID,Kit Number as Parent Label,Source as Type and Cyst Fluid Aliquots  as No of aliquot 
+
+2)Concat Fields Cyst Fluid Time Collected and Cyst Fluid date collected rename as Collection Date and Concat Fields Cyst Fluid Time Frozen and Freeze Date rename as Created On.
+
+3)Ignore Who Transported,Who Processed,Aliq Vol (uL),Samples Sent and Volume left fields from Output Text File.
+
+4)Change value of fields Type as if EUS then EUS Cyst Fluid,if surgery then Surgery Cyst Fluid and if Blank then  Not Specified.
+
+5)Date fromat must be in 'mm-dd-yyyy'.
+
+6)Give the aliquot quantity as per the condition if 1-40 then 100ul ,if 41-80 then 500ul and if 81-above then 5 ml.
+
+7)Create output CSV file.
+
+soluntion : 
+
+1) First reads data from input CSV files into PDI using 'CSV File Input' transformation.
+
+2) To Renaming the fields use Select Value Transformation then rename fields using Select and Alter Section.
+
+3) To concat fields use Concat Fields Transformation.Give Target Field name and two source fields which you want to concat.
+
+4) To ignore fields remove it from text file output fields. 
+
+5) To change value use Value Mapper Transformation.In that Gives field name and also source and target name of value.
+
+6) To change Date Format change format in text file output csv as 'MM-DD-YYYY'.
+
+7)To give aliquots quantity first gives sequence to select field change seuquence
+an then use Number Range Transformation to gives aliquotes as per condition.
+
+
+8) Load all the data from input CSV to the output CSV with by using 'Text Output' transformation.
+
+9) Run the script and verified the count from input and output CSV also verified the changes in CSV.
+
+
+please refer the below link : 
+
+https://docs.google.com/document/d/1ePemUZCgOdGjU2so5PvCxqB0_St9aqPDm-bzNltnyjY/edit
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
