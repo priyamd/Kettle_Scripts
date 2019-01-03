@@ -1,0 +1,116 @@
+############# Assignment 4 #################
+
+Question 1 : Need to load the input Tissue Log csv to the output parent csv.
+
+Fields are : PA#,Kit#,Lab,Patient Initials,Date Collected,Date Processed,Out of Body Time (approx.),Processed Time,Latency until processed,Location,Transporter	Processor,Tissue Type,# Formalin,# RNA Later,# Frozen,SNAP Frozen?,# Para- formaldehyde	A Specimen frozen right away	Formalin tubes remaining,RNA Later Used	Tube(s) used,Pieces remaining in used tube,RNA Later tubes Remaining,Frozen Used,Frozen Remaining	Quality?,Paraffin Block	H&E Slide,Frozen 1 weight,Frozen 2 weight,Frozen 3 Weight,Comments
+
+The first output parent csv file will be as per the Requirement.Requirements are as below,
+
+1)Add following fields to output CP Short Title,PPID,Visit Name,Visit Date,Specimen Label,Type,Tissue Type,Collection Date,Recived Date,Registration Date,Lineage
+2)Add Constant CP Short Title as 'Demo CP',Type as 'Fresh Tissue' and Lineage as 'New'.
+3)Concat Fields PPID and Visit Date and target field is 'Visit Name'.
+4)Rename Kit# as Specimen Label, Date Collected as Collection Date.
+5)Mapped Tissue Type as per given values.
+6)Visit Date,Recived Date,Registration Date is same as Date Collected. 
+7) All dates are must be in 'mm-dd-yyyy' format.
+8)Create output CSV file.
+
+Solution : 
+1) First reads data from input CSV files into PDI using 'CSV File Input' transformation.
+
+2) Add constant CP Short Title as 'Demo CP',Type as 'Fresh Tissue' and Lineage as 'New' using Add Constant Transformation.
+
+3) Concat Fields PPID and Visit Date rename as Visit name using Concat Fields Transformation.
+
+4) To change value of Tissue Type use Value Mapper Transformation.In that Gives field name and also source and target name of value.
+
+5) Change fields name and add new fields using select values.
+
+6) To change Date Format change format in text file output csv as 'MM-DD-YYYY'.
+
+7) Load all the data from input CSV to the output CSV with by using 'Text Output' transformation.
+
+8) Run the script and verified the count from input and output CSV also verified the changes in CSV.
+
+please refer the below link : 
+
+https://docs.google.com/document/d/1UskBojjWL6IUgfRsUIxIFPvhKkjBXbuTcRbFBtL-tHA/edit
+
+-----------------------------------------------------------------------------------------------------------
+Question 2 : Need to load the input Tissue Log csv to the output Derivative csv.
+
+Fields are : PA#,Kit#,Lab,Patient Initials,Date Collected,Date Processed,Out of Body Time (approx.),Processed Time,Latency until processed,Location,Transporter	Processor,Tissue Type,# Formalin,# RNA Later,# Frozen,SNAP Frozen?,# Para- formaldehyde	A Specimen frozen right away	Formalin tubes remaining,RNA Later Used	Tube(s) used,Pieces remaining in used tube,RNA Later tubes Remaining,Frozen Used,Frozen Remaining	Quality?,Paraffin Block	H&E Slide,Frozen 1 weight,Frozen 2 weight,Frozen 3 Weight,Comments
+
+The second output Derivative csv file will be as per the Requirement.Requirements are as below,
+
+1)Add following fields to output CP Title,Parent Specimen,Specimen Label,Type,Created On,Lineage.
+2)Add Constant CP Short Title as 'CP Demo',Type as Fixed Tissue, Frozen Tissue & RNA Tissue and Lineage as 'Derived'.
+3)Add Specimen Label as if type is Fixed Tissue then concat kit# and '_FiT',if type is Frozen Tissue then concat kit# and '_FrT' and if type is RNA Tissue then concat kit# and '_RNA'.
+4)Add Created On same as Date Collected.
+5)Create output CSV file.
+
+Solution : 
+1) First reads data from input CSV files into PDI using 'CSV File Input' transformation.
+
+2) Add constant CP Short Title as 'CP Demo',Type on the basis of  Type and Lineage as 'Derived' using Add Constant Transformation.
+
+3) Create constant On basis of Type and the it is concat with Kit#.
+
+4) Change fields name and add new fields using select values.
+
+5) To change Date Format change format in text file output csv as 'MM-DD-YYYY'.
+
+6) Load all the data from input CSV to the output CSV with by using 'Text Output' transformation.
+
+7) Run the script and verified the count from input and output CSV also verified the changes in CSV.
+
+please refer the below link : 
+
+https://docs.google.com/document/d/1UskBojjWL6IUgfRsUIxIFPvhKkjBXbuTcRbFBtL-tHA/edit
+
+-----------------------------------------------------------------------------------------------------------
+Question 3 : Need to load the input Tissue Log csv to the output Aliquot csv.
+
+Fields are : PA#,Kit#,Lab,Patient Initials,Date Collected,Date Processed,Out of Body Time (approx.),Processed Time,Latency until processed,Location,Transporter	Processor,Tissue Type,# Formalin,# RNA Later,# Frozen,SNAP Frozen?,# Para- formaldehyde	A Specimen frozen right away	Formalin tubes remaining,RNA Later Used	Tube(s) used,Pieces remaining in used tube,RNA Later tubes Remaining,Frozen Used,Frozen Remaining	Quality?,Paraffin Block	H&E Slide,Frozen 1 weight,Frozen 2 weight,Frozen 3 Weight,Comments
+
+The third output Aliquot csv file will be as per the Requirement.Requirements are as below,
+
+1)Add following fields to output CP Short Title,Parent Specimen Label,Specimen Label,Created On,Type,Class,Initial Quantity,Available Quantity,Lineage.
+
+2)Add Constant CP Short Title as 'CP Demo',Type as Fixed Tissue, Frozen Tissue & RNA Tissue, Class as 'Tissue' and Lineage as 'Aliquot'.
+
+3)Create rows as per value of #formalin For Fixed Tissue,#Frozen for Frozen Tissue and #RNA for RNA Tissue.
+
+4)Add number in Specimen Number as per tissue type.
+
+5)Add Created On same as Date Collected.
+
+6)Create output CSV file.
+
+Solution : 
+1) First reads data from input CSV files into PDI using 'CSV File Input' transformation.
+
+2) Add constant CP Short Title as 'CP Demo',Type on the basis of  Type,Class as 'Tissue' and Lineage as 'Derived' using Add Constant Transformation.
+
+3)Create Cone of rows on the basis of #formalin,#Frozen and #RNA then append into one stream.
+
+4) Change fields name and add new fields using select values.
+
+5) To change Date Format change format in text file output csv as 'MM-DD-YYYY'.
+
+6) Load all the data from input CSV to the output CSV with by using 'Text Output' transformation.
+
+7) Run the script and verified the count from input and output CSV also verified the changes in CSV.
+
+
+please refer the below link : 
+https://docs.google.com/document/d/1UskBojjWL6IUgfRsUIxIFPvhKkjBXbuTcRbFBtL-tHA/edit
+
+
+
+
+
+
+
+
+
